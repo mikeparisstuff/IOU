@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">IOU</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+
+    <!-- Home Screen -->
+    <string name="owe">Owe</string>
+    <string name="owed">Owed</string>
+    <string name="title_activity_owe_screen">OweScreen</string>
+    <string name="title_activity_owed_screen">OwedScreen</string>
+    <string name="title_activity_owe_list_fragment">OweListFragment</string>
+
+    <!-- Owe Screen -->
+    <string name="owe_header">You Owe:</string>
+    <string name="new_button">New</string>
+
+    <!-- Owed Screen -->
+    <string name="owed_header">You\'re Owed:</string>
+    <string name="money_sign">$</string>
+
+
+</resources>

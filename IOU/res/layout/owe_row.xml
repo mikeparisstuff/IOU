@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:background="@color/row_background">
+    <TextView
+            android:id="@+id/owe_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/black"
+            android:text="@string/owe_header"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+            android:id="@+id/owe_amount"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/green"
+            android:layout_centerVertical="true"
+            android:text="@string/new_button" />
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/money_sign"
+            android:layout_marginRight="5dp"
+            android:id="@+id/owe_money_sign" android:layout_toLeftOf="@+id/owe_amount"
+            android:layout_centerVertical="true"/>
+
+</RelativeLayout>

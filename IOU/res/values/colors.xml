@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- HOME SCREEN -->
+    <color name="owe_button_background">#2299FF</color>
+    <color name="owe_button_shadow">#304B93</color>
+    <color name="owed_button_background">#C52525</color>
+    <color name="owed_button_shadow">#9A3131</color>
+    <color name="home_background">#979795</color>
+
+    <!-- Owe Screen -->
+    <color name="row_background">#EFEFEF</color>
+    <color name="green">#309331</color>
+    <color name="black">#000000</color>
+
+</resources>
