@@ -6,8 +6,8 @@
     <string name="menu_settings">Settings</string>
 
     <!-- Home Screen -->
-    <string name="owe">Owe</string>
-    <string name="owed">Owed</string>
+    <string name="owe">I Owe</string>
+    <string name="owed">I\'m Owed</string>
     <string name="title_activity_owe_screen">OweScreen</string>
     <string name="title_activity_owed_screen">OwedScreen</string>
     <string name="title_activity_owe_list_fragment">OweListFragment</string>
@@ -20,5 +20,17 @@
     <string name="owed_header">You\'re Owed:</string>
     <string name="money_sign">$</string>
 
+    <!-- New Owe Screen -->
+    <string name="new_owe">New Owe Record</string>
+    <string name="new_owe_name_hint">Who do you owe?</string>
+    <string name="new_owe_amount_hint">How much do you owe?</string>
+    <string name="add_owe">Add Owe</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- New Owed Screen -->
+    <string name="new_owed">New Owed Record</string>
+    <string name="new_owed_name_hint">Who owes you?</string>
+    <string name="new_owed_amount_hint">How much do you owe?</string>
+    <string name="add_owed">Add Owed</string>
 
 </resources>

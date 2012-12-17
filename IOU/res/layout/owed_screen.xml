@@ -30,4 +30,17 @@
     </RelativeLayout>
 
 
+    <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@id/android:list">
+    </ListView>
+
+    <TextView android:id="@id/android:empty"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:text="You're not owed anything."
+            />
+
+
 </LinearLayout>

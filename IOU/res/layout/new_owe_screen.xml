@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_owe"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:id="@+id/textView" android:layout_gravity="center"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/new_owe_name_hint"
+            android:id="@+id/new_owe_name"
+            android:layout_gravity="center"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/new_owe_amount_hint"
+            android:id="@+id/new_owe_amount"
+            android:inputType="numberDecimal"
+            android:layout_gravity="center"/>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cancel"
+                android:id="@+id/cancel_owe_button" android:layout_gravity="center_vertical"/>
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/add_owe"
+                android:id="@+id/confirm_owe_button" android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+</LinearLayout>
