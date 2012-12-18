@@ -15,6 +15,7 @@
     <!-- Owe Screen -->
     <string name="owe_header">You Owe:</string>
     <string name="new_button">New</string>
+    <string name="back_button">Back</string>
 
     <!-- Owed Screen -->
     <string name="owed_header">You\'re Owed:</string>

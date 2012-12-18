@@ -6,9 +6,7 @@ import android.content.Intent;
 import android.database.SQLException;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.SimpleAdapter;
-import android.widget.SimpleCursorAdapter;
+import android.widget.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,13 +19,22 @@ import java.util.List;
  * Time: 4:34 PM
  * To change this template use File | Settings | File Templates.
  */
-public class OwedScreen extends ListActivity {
+public class OwedScreen extends Activity { //ListActivity {
 
     private OwedsDataSource datasource;
 
-    private ArrayList<HashMap<String, String>> owedList;
+//    private ArrayList<HashMap<String, String>> owedList;
     private Button newButton;
-    private SimpleAdapter adapter;
+    private Button backButton;
+    //private SimpleAdapter adapter;
+    private OwedAdapter adapter;
+
+    //Custom ListView
+    private ListView listView1;
+
+    //List of all oweds in the database
+    private List<Owed> oweds;
+//    private Owed[] oweds;
 
 
 
@@ -45,12 +52,19 @@ public class OwedScreen extends ListActivity {
         }
 
 
-        List<Owed> oweds = datasource.getAllOwed();
+        oweds = datasource.getAllOwed();
+        //Owed owed_data[] = oweds.toArray(new Owed[oweds.size()]);
 
-        owedList = new ArrayList<HashMap<String, String>>();
+        adapter = new OwedAdapter(this,
+                R.layout.owed_row, oweds);
+
+        listView1 = (ListView)findViewById(R.id.owed_listview);
+
+        listView1.setAdapter(adapter);
 
         //get UI elements by ID
         newButton = (Button) findViewById(R.id.new_owed_button);
+        backButton = (Button) findViewById(R.id.owed_back_button);
 
         newButton.setOnClickListener( new View.OnClickListener() {
             Owed owed = null;
@@ -62,23 +76,48 @@ public class OwedScreen extends ListActivity {
             }
         });
 
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(OwedScreen.this, HomeScreen.class));
+            }
+        });
+
+        //Set the OnItemClickListener
+        listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Owed owed = (Owed) parent.getItemAtPosition(position);
+                datasource.deleteOwed(owed);
+                oweds.remove(owed);
+                adapter.notifyDataSetChanged();
+            }
+        });
+
+        //Used in early version with multiple rows
+//        owedList = new ArrayList<HashMap<String, String>>();
+
         //make list adapter to tie data from DB to listView
-        adapter = new SimpleAdapter(
-                this, owedList,  R.layout.owed_row,
-                new String[] {"name", "owedAmount"},
-                new int[] { R.id.owed_name, R.id.owed_amount}
-                );
+//        adapter = new SimpleAdapter(
+//                this, owedList,  R.layout.owed_row,
+//                new String[] {"name", "owedAmount"},
+//                new int[] { R.id.owed_name, R.id.owed_amount}
+//                );
+//        setListAdapter(adapter);
 
-        populateList(oweds);
-
-        setListAdapter(adapter);
+        //Used when I had to have 2 lists holding the info
+        //for the list adapter
+//        populateList(oweds);
 
         Bundle extras = getIntent().getExtras();
 
         if(extras != null) {
             Owed owed = datasource.createOwed(extras.getString("name"),
                     extras.getDouble("amount"));
-            addOwed(owed.getName(), owed.getOwedAmount());
+
+            oweds.add(owed);
+            //used on early version with multiple lists
+//            addOwed(owed.getName(), owed.getOwedAmount());
             adapter.notifyDataSetChanged();
         }
     }
@@ -86,39 +125,46 @@ public class OwedScreen extends ListActivity {
     public void onResume(Bundle savedInstanceState) {
         super.onResume();
 
-        Bundle extras = getIntent().getExtras();
-
-        if(extras != null) {
-            Owed owed = datasource.createOwed(extras.getString("name"),
-                    extras.getDouble("amount"));
-            addOwed(owed.getName(), owed.getOwedAmount());
-            adapter.notifyDataSetChanged();
-        }
+//        Bundle extras = getIntent().getExtras();
+//
+//        if(extras != null) {
+//            Owed owed = datasource.createOwed(extras.getString("name"),
+//                    extras.getDouble("amount"));
+//            addOwed(owed.getName(), owed.getOwedAmount());
+//            adapter.notifyDataSetChanged();
+//        }
     }
 
-    private void addOwedToList() {
-        Owed owed = null;
-        //Still need to implement a way to update the information
-        //personally
+//    @Override
+//    public void onListItemClick(ListView l, View v, int position, long id) {
+//           Owed owed = (Owed) getListView().getItemAtPosition(position);
+//           datasource.deleteOwed(owed);
+//           adapter.notifyDataSetChanged();
+//    }
 
-        owed = datasource.createOwed("Test Owed", 7.60);
-        addOwed(owed.getName(), owed.getOwedAmount());
+//    private void addOwedToList() {
+//        Owed owed = null;
+//        //Still need to implement a way to update the information
+//        //personally
+//
+//        owed = datasource.createOwed("Test Owed", 7.60);
+//        addOwed(owed.getName(), owed.getOwedAmount());
+//
+//        adapter.notifyDataSetChanged();
+//
+//    }
 
-        adapter.notifyDataSetChanged();
-
-    }
-
-    private List<HashMap<String, String>> addOwed(String name, double value) {
-        HashMap<String, String> owedMap = new HashMap<String, String>();
-        owedMap.put("name", name);
-        owedMap.put("owedAmount", String.valueOf(value));
-        owedList.add(owedMap);
-        return owedList;
-    }
-
-    private void populateList(List<Owed> oweds) {
-        for( Owed owed: oweds) {
-            addOwed(owed.getName(), owed.getOwedAmount());
-        }
-    }
+//    private List<HashMap<String, String>> addOwed(String name, double value) {
+//        HashMap<String, String> owedMap = new HashMap<String, String>();
+//        owedMap.put("name", name);
+//        owedMap.put("owedAmount", String.valueOf(value));
+//        owedList.add(owedMap);
+//        return owedList;
+//    }
+//
+//    private void populateList(List<Owed> oweds) {
+//        for( Owed owed: oweds) {
+//            addOwed(owed.getName(), owed.getOwedAmount());
+//        }
+//    }
 }
