@@ -34,4 +34,13 @@
     <string name="new_owed_amount_hint">How much do you owe?</string>
     <string name="add_owed">Add Owed</string>
 
+    <!-- Owe Info -->
+    <string name="owe_title">Owe</string>
+    <string name="owe_name">Name:</string>
+    <string name="owe_amount">Amount:</string>
+    <string name="owe_delete">Delete</string>
+    <string name="owe_subtract">Subtract</string>
+    <string name="owe_add">Add</string>
+    <string name="owe_done">Done</string>
+
 </resources>

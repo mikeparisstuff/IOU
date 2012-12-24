@@ -30,7 +30,7 @@ public class OwedScreen extends Activity { //ListActivity {
     private OwedAdapter adapter;
 
     //Custom ListView
-    private ListView listView1;
+    private ListView owedListView;
 
     //List of all oweds in the database
     private List<Owed> oweds;
@@ -58,9 +58,9 @@ public class OwedScreen extends Activity { //ListActivity {
         adapter = new OwedAdapter(this,
                 R.layout.owed_row, oweds);
 
-        listView1 = (ListView)findViewById(R.id.owed_listview);
+        owedListView = (ListView)findViewById(R.id.owed_listview);
 
-        listView1.setAdapter(adapter);
+        owedListView.setAdapter(adapter);
 
         //get UI elements by ID
         newButton = (Button) findViewById(R.id.new_owed_button);
@@ -84,13 +84,17 @@ public class OwedScreen extends Activity { //ListActivity {
         });
 
         //Set the OnItemClickListener
-        listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        owedListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Owed owed = (Owed) parent.getItemAtPosition(position);
-                datasource.deleteOwed(owed);
-                oweds.remove(owed);
-                adapter.notifyDataSetChanged();
+                Intent i = new Intent(OwedScreen.this, OwedInfo.class);
+                i.putExtra("owed", owed);
+                startActivity(i);
+
+//                datasource.deleteOwed(owed);
+//                oweds.remove(owed);
+//                adapter.notifyDataSetChanged();
             }
         });
 
@@ -112,19 +116,29 @@ public class OwedScreen extends Activity { //ListActivity {
         Bundle extras = getIntent().getExtras();
 
         if(extras != null) {
-            Owed owed = datasource.createOwed(extras.getString("name"),
-                    extras.getDouble("amount"));
-
-            oweds.add(owed);
-            //used on early version with multiple lists
-//            addOwed(owed.getName(), owed.getOwedAmount());
-            adapter.notifyDataSetChanged();
+            if(extras.containsKey("name") && extras.containsKey("amount")) {
+                Owed owed = datasource.createOwed(extras.getString("name"),
+                        extras.getDouble("amount"));
+                oweds.add(owed);
+                adapter.notifyDataSetChanged();
+            }
+            if(extras.containsKey("owed")) {
+                Owed owed = (Owed)extras.getSerializable("owed");
+                oweds.remove(owed);
+                adapter.notifyDataSetChanged();
+            }
         }
     }
 
     public void onResume(Bundle savedInstanceState) {
         super.onResume();
 
+        try {
+            datasource.open();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
 //        Bundle extras = getIntent().getExtras();
 //
 //        if(extras != null) {
@@ -133,6 +147,11 @@ public class OwedScreen extends Activity { //ListActivity {
 //            addOwed(owed.getName(), owed.getOwedAmount());
 //            adapter.notifyDataSetChanged();
 //        }
+    }
+
+    public void onPause(Bundle savedInstanceState) {
+        super.onPause();
+        datasource.close();
     }
 
 //    @Override

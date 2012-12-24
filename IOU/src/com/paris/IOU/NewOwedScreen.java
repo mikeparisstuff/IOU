@@ -4,9 +4,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import static android.view.WindowManager.LayoutParams;
 
 /**
  * Created with IntelliJ IDEA.
@@ -26,6 +30,11 @@ public class NewOwedScreen extends Activity {
     public void onCreate(Bundle savedInstanceBundle) {
         super.onCreate(savedInstanceBundle);
         setContentView(R.layout.new_owed_screen);
+
+        LayoutParams params = getWindow().getAttributes();
+        params.width = LayoutParams.MATCH_PARENT;
+        params.height = LayoutParams.WRAP_CONTENT;
+        getWindow().setAttributes((LayoutParams) params);
 
         //find GUI views by id
         confirmOwed = (Button) findViewById(R.id.confirm_owed_button);

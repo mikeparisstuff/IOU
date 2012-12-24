@@ -52,6 +52,14 @@ public class OwedsDataSource {
         return newOwed;
     }
 
+    public void updateOwed(Owed owed, double amount) {
+        String strFilter = "_id=" + owed.getId();
+        ContentValues values = new ContentValues();
+        values.put(MySQLiteOwedHelper.COLUMN_NAME, owed.getName());
+        values.put(MySQLiteOwedHelper.COLUMN_OWEDVAL, amount);
+        database.update(MySQLiteOwedHelper.TABLE_OWEDS, values, strFilter, null);
+    }
+
     public void deleteOwed(Owed owed) {
         long id = owed.getId();
         System.out.println("Owed deleted with id: " + id);

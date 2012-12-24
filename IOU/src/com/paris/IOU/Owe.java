@@ -1,5 +1,7 @@
 package com.paris.IOU;
 
+import java.io.Serializable;
+
 /**
  * Created with IntelliJ IDEA.
  * User: MichaelParis
@@ -7,7 +9,7 @@ package com.paris.IOU;
  * Time: 10:01 PM
  * To change this template use File | Settings | File Templates.
  */
-public class Owe {
+public class Owe implements Serializable {
 
     private long id;
     private String name;

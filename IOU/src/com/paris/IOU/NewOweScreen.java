@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.inputmethodservice.ExtractEditText;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -28,6 +29,11 @@ public class NewOweScreen extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_owe_screen);
+
+        WindowManager.LayoutParams params = getWindow().getAttributes();
+        params.width = WindowManager.LayoutParams.MATCH_PARENT;
+        params.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        getWindow().setAttributes((WindowManager.LayoutParams) params);
 
         //find GUI views by id
         confirmOwe = (Button) findViewById(R.id.confirm_owe_button);

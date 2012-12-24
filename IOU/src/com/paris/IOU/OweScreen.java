@@ -64,9 +64,15 @@ public class OweScreen extends Activity { //ListActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Owe owe = (Owe) parent.getItemAtPosition(position);
-                datasource.deleteOwe(owe);
-                owes.remove(owe);
-                adapter.notifyDataSetChanged();
+                Intent i = new Intent(OweScreen.this, OweInfo.class);
+                i.putExtra("owe", owe);
+                startActivity(i);
+
+
+
+//                datasource.deleteOwe(owe);
+//                owes.remove(owe);
+//                adapter.notifyDataSetChanged();
             }
         });
 
@@ -107,11 +113,18 @@ public class OweScreen extends Activity { //ListActivity {
         Bundle extras = getIntent().getExtras();
 
         if(extras != null) {
-            Owe owe = datasource.createOwe(extras.getString("name"),
-                    extras.getDouble("amount"));
+            if(extras.containsKey("name") && extras.containsKey("amount")) {
+                Owe owe = datasource.createOwe(extras.getString("name"),
+                        extras.getDouble("amount"));
 //            addOwe(owe.getName(), owe.getOweAmount());
-            owes.add(owe);
-            adapter.notifyDataSetChanged();
+                owes.add(owe);
+                adapter.notifyDataSetChanged();
+            }
+            if(extras.containsKey("owe")) {
+                Owe owe = (Owe)extras.getSerializable("owe");
+                owes.remove(owe);
+                adapter.notifyDataSetChanged();
+            }
         }
 
     }
@@ -119,6 +132,12 @@ public class OweScreen extends Activity { //ListActivity {
     public void onResume(Bundle savedInstanceState) {
         super.onResume();
 
+        try {
+            datasource.open();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
 //        Bundle extras = getIntent().getExtras();
 //
 //        if(extras.getString("name") != null && extras.containsKey("amount")) {
@@ -128,6 +147,11 @@ public class OweScreen extends Activity { //ListActivity {
 //             adapter.notifyDataSetChanged();
 //        }
 
+    }
+
+    public void onPause(Bundle savedInstanceState) {
+        super.onPause();
+        datasource.close();
     }
 
 

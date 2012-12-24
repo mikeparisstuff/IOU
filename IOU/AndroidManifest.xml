@@ -15,7 +15,13 @@
         </activity>
         <activity android:name=".OweScreen"/>
         <activity android:name=".OwedScreen"/>
-        <activity android:name=".NewOweScreen"/>
-        <activity android:name=".NewOwedScreen"/>
+        <activity android:name=".NewOweScreen"
+                  android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar"/>
+        <activity android:name=".NewOwedScreen"
+                  android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar"/>
+        <activity android:name=".OweInfo"
+                  android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar"/>
+        <activity android:name=".OwedInfo"
+                  android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar"/>
     </application>
 </manifest>
