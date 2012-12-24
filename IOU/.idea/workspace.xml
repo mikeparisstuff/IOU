@@ -132,7 +132,7 @@
     <favorites_list name="IOU" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.25037482">
+    <splitter split-orientation="horizontal" split-proportion="0.47704446">
       <split-first>
         <leaf>
           <file leaf-file-name="owed_row.xml" pinned="false" current="false" current-in-tab="false">
@@ -207,7 +207,7 @@
           <file leaf-file-name="OweInfo.java" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/OweInfo.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="126" column="97" selection-start="4418" selection-end="4418" vertical-scroll-proportion="0.029411765">
+                <state line="126" column="97" selection-start="4418" selection-end="4418" vertical-scroll-proportion="0.022354694">
                   <folding />
                 </state>
               </provider>
@@ -256,7 +256,7 @@
           <file leaf-file-name="OwedInfo.java" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/OwedInfo.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="157" column="28" selection-start="5843" selection-end="5843" vertical-scroll-proportion="0.3889717">
+                <state line="157" column="28" selection-start="5843" selection-end="5843" vertical-scroll-proportion="0.4279539">
                   <folding />
                 </state>
               </provider>
@@ -311,9 +311,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="720" />
     <option name="y" value="22" />
-    <option name="width" value="720" />
+    <option name="width" value="1440" />
     <option name="height" value="878" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -358,6 +357,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -446,7 +446,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -671,7 +670,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="720" y="22" width="720" height="878" extended-state="1" />
+    <frame x="0" y="22" width="1440" height="878" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287858" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -687,7 +686,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.08393113" sideWeight="0.89577836" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36795253" sideWeight="0.7585266" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19010043" sideWeight="0.7585266" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24147339" sideWeight="0.4971223" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18364419" sideWeight="0.89577836" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -861,7 +860,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/OweInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="97" selection-start="4418" selection-end="4418" vertical-scroll-proportion="0.029411765">
+        <state line="126" column="97" selection-start="4418" selection-end="4418" vertical-scroll-proportion="0.022354694">
           <folding />
         </state>
       </provider>
@@ -875,7 +874,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/OwedInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="157" column="28" selection-start="5843" selection-end="5843" vertical-scroll-proportion="0.3889717">
+        <state line="157" column="28" selection-start="5843" selection-end="5843" vertical-scroll-proportion="0.4279539">
           <folding />
         </state>
       </provider>
