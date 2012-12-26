@@ -17,17 +17,22 @@ public class MySQLiteOweHelper extends SQLiteOpenHelper {
     public static final String TABLE_OWES = "owes";
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_NAME = "name";
-    public static final String COLUMN_OWE = "owe";
+    public static final String COLUMN_OWEVAL = "oweval";
+    public static final String COLUMN_DESC = "description";
+    public static final String COLUMN_DATECREATED = "datecreated";
 
     private static final String DATABASE_NAME = "owes.db";
-    private static final int DATABASE_VERSION = 3;
+    //ADDING DATE AND DESCRIPTION--> VERSION 4
+    private static final int DATABASE_VERSION = 4;
 
     //Database creation sql statement
     private static final String DATABASE_CREATE = "create table "
             + TABLE_OWES + "(" + COLUMN_ID
             + " integer primary key autoincrement, " + COLUMN_NAME
-            + " text not null, " + COLUMN_OWE
-            + " text not null);";
+            + " text not null, " + COLUMN_OWEVAL
+            + " text not null, " + COLUMN_DESC
+            + " text not null, " + COLUMN_DATECREATED
+            + " DATETIME DEFAULT CURRENT_TIMESTAMP);";
 
     public MySQLiteOweHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

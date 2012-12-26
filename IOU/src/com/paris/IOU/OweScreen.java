@@ -68,15 +68,9 @@ public class OweScreen extends Activity { //ListActivity {
                 i.putExtra("owe", owe);
                 startActivity(i);
 
-
-
-//                datasource.deleteOwe(owe);
-//                owes.remove(owe);
-//                adapter.notifyDataSetChanged();
             }
         });
 
-//        oweList = new ArrayList<HashMap<String, String>>();
 
         //Find Button and set Listener
         newButton = (Button) findViewById(R.id.new_owe_button);
@@ -99,24 +93,12 @@ public class OweScreen extends Activity { //ListActivity {
             }
         });
 
-        //make list adapter to hold tie data to listView
-//        adapter = new SimpleAdapter(
-//                this, oweList, R.layout.owe_row,
-//                new String[] {"name", "oweAmount"},
-//                new int[] { R.id.owe_name, R.id.owe_amount}
-//                );
-//
-//        populateList(owes);
-//
-//        setListAdapter(adapter);
-
         Bundle extras = getIntent().getExtras();
 
         if(extras != null) {
             if(extras.containsKey("name") && extras.containsKey("amount")) {
                 Owe owe = datasource.createOwe(extras.getString("name"),
-                        extras.getDouble("amount"));
-//            addOwe(owe.getName(), owe.getOweAmount());
+                        extras.getDouble("amount"), extras.getString("desc"));
                 owes.add(owe);
                 adapter.notifyDataSetChanged();
             }
@@ -138,14 +120,6 @@ public class OweScreen extends Activity { //ListActivity {
         catch (SQLException e) {
             e.printStackTrace();
         }
-//        Bundle extras = getIntent().getExtras();
-//
-//        if(extras.getString("name") != null && extras.containsKey("amount")) {
-//             Owe owe = datasource.createOwe(extras.getString("name"),
-//                     extras.getDouble("amount"));
-//             addOwe(owe.getName(), owe.getOweAmount());
-//             adapter.notifyDataSetChanged();
-//        }
 
     }
 
@@ -154,31 +128,4 @@ public class OweScreen extends Activity { //ListActivity {
         datasource.close();
     }
 
-
-
-//    private void addOweToList() {
-//        Owe owe = datasource.createOwe("Test Owe", 5.90);
-//        addOwe(owe.getName(), owe.getOweAmount());
-//
-////                addOwe("Test New", 5);
-//        adapter.notifyDataSetChanged();
-//    }
-
-//    private void populateList(List<Owe> owes) {
-//        for( Owe owe: owes) {
-//              addOwe(owe.getName(), owe.getOweAmount());
-//        }
-
-//        addOwe("Alex", 7);
-//        addOwe("Kyle", 7000);
-//        addOwe("Will", 16);
-//    }
-
-//    private List<HashMap<String, String>> addOwe(String name, double value) {
-//        HashMap<String, String> oweMap = new HashMap<String, String>();
-//        oweMap.put("name", name);
-//        oweMap.put("oweAmount", String.valueOf(value));
-//        oweList.add(oweMap);
-//        return oweList;
-//    }
 }

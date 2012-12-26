@@ -13,12 +13,13 @@
     <string name="title_activity_owe_list_fragment">OweListFragment</string>
 
     <!-- Owe Screen -->
-    <string name="owe_header">You Owe:</string>
+    <string name="owe_header">I Owe:</string>
     <string name="new_button">New</string>
     <string name="back_button">Back</string>
+    <string name="new_date">New Date</string>
 
     <!-- Owed Screen -->
-    <string name="owed_header">You\'re Owed:</string>
+    <string name="owed_header">I\'m Owed:</string>
     <string name="money_sign">$</string>
 
     <!-- New Owe Screen -->
@@ -27,6 +28,8 @@
     <string name="new_owe_amount_hint">How much do you owe?</string>
     <string name="add_owe">Add Owe</string>
     <string name="cancel">Cancel</string>
+    <string name="desc_title">Description</string>
+    <string name="desc_hint">Why do you owe this? (Optional)</string>
 
     <!-- New Owed Screen -->
     <string name="new_owed">New Owed Record</string>
@@ -42,5 +45,13 @@
     <string name="owe_subtract">Subtract</string>
     <string name="owe_add">Add</string>
     <string name="owe_done">Done</string>
+    <string name="owe_desc_prompt">For:</string>
+    <string name="owe_desc">New Description</string>
+    <string name="date_created_title">Date Created:</string>
+    <string name="date_created">New Date</string>
+    <string name="empty_desc">None</string>
+
+    <!-- Owed Info -->
+    <string name="owed_title">Owed</string>
 
 </resources>

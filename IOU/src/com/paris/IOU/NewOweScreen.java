@@ -25,6 +25,7 @@ public class NewOweScreen extends Activity {
     private Button cancelOwe;
     private EditText newNameEdit;
     private EditText newAmountEdit;
+    private EditText newOweDesc;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +41,7 @@ public class NewOweScreen extends Activity {
         cancelOwe = (Button) findViewById(R.id.cancel_owe_button);
         newNameEdit = (EditText) findViewById(R.id.new_owe_name);
         newAmountEdit = (EditText) findViewById(R.id.new_owe_amount);
+        newOweDesc = (EditText)findViewById(R.id.new_owe_desc);
 
         //set onClickListeners
         confirmOwe.setOnClickListener( new View.OnClickListener() {
@@ -64,6 +66,7 @@ public class NewOweScreen extends Activity {
            Intent intent = new Intent(NewOweScreen.this, OweScreen.class);
            intent.putExtra("name", newNameEdit.getText().toString());
            intent.putExtra("amount", Double.parseDouble(newAmountEdit.getText().toString()));
+           intent.putExtra("desc", newOweDesc.getText().toString());
            startActivity(intent);
         }
         else {

@@ -6,25 +6,42 @@
               android:layout_height="fill_parent">
 
     <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/new_owe"
             android:textSize="25sp"
             android:textColor="@color/black"
-            android:id="@+id/textView" android:layout_gravity="center"/>
+            android:id="@+id/new_owe_title" android:gravity="center" android:background="@android:color/darker_gray"/>
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:hint="@string/new_owe_name_hint"
             android:id="@+id/new_owe_name"
+            android:layout_marginTop="7dp"
             android:layout_gravity="center"/>
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:hint="@string/new_owe_amount_hint"
             android:id="@+id/new_owe_amount"
+            android:layout_marginTop="7dp"
             android:inputType="numberDecimal"
             android:layout_gravity="center"/>
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/desc_title"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:id="@+id/new_owe_desc_title" android:gravity="center"
+            android:background="@android:color/darker_gray"/>
+    <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/desc_hint"
+            android:layout_marginTop="7dp"
+            android:id="@+id/new_owe_desc"
+            android:layout_gravity="center" android:maxLines="3"/>
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"

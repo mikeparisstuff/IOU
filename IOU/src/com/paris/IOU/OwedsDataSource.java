@@ -6,7 +6,9 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -22,7 +24,8 @@ public class OwedsDataSource {
     private SQLiteDatabase database;
     private MySQLiteOwedHelper dbHelper;
     private String[] allColumns = { MySQLiteOwedHelper.COLUMN_ID,
-            MySQLiteOwedHelper.COLUMN_NAME, MySQLiteOwedHelper.COLUMN_OWEDVAL};
+            MySQLiteOwedHelper.COLUMN_NAME, MySQLiteOwedHelper.COLUMN_OWEDVAL,
+            MySQLiteOwedHelper.COLUMN_DESC, MySQLiteOwedHelper.COLUMN_DATECREATED};
 
     public OwedsDataSource( Context context ) {
         dbHelper = new MySQLiteOwedHelper(context);
@@ -36,10 +39,16 @@ public class OwedsDataSource {
         dbHelper.close();
     }
 
-    public Owed createOwed(String name, double oweAmount) {
+    public Owed createOwed(String name, double oweAmount, String desc) {
         ContentValues values = new ContentValues();
         values.put(MySQLiteOwedHelper.COLUMN_NAME, name);
         values.put(MySQLiteOwedHelper.COLUMN_OWEDVAL, oweAmount);
+        values.put(MySQLiteOwedHelper.COLUMN_DESC, desc);
+
+        //GET CURRENT DATE TO ADD TO TABLE
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+        String strDate = sdf.format(new Date());
+        values.put(MySQLiteOwedHelper.COLUMN_DATECREATED, strDate);
 
         long insertId = database.insert(MySQLiteOwedHelper.TABLE_OWEDS, null,
                 values);
@@ -57,6 +66,8 @@ public class OwedsDataSource {
         ContentValues values = new ContentValues();
         values.put(MySQLiteOwedHelper.COLUMN_NAME, owed.getName());
         values.put(MySQLiteOwedHelper.COLUMN_OWEDVAL, amount);
+        values.put(MySQLiteOwedHelper.COLUMN_DESC, owed.getDescription());
+        values.put(MySQLiteOwedHelper.COLUMN_DATECREATED, owed.getDateTime());
         database.update(MySQLiteOwedHelper.TABLE_OWEDS, values, strFilter, null);
     }
 
@@ -89,6 +100,8 @@ public class OwedsDataSource {
         owed.setId(cursor.getLong(0));
         owed.setName(cursor.getString(1));
         owed.setOwedAmount(cursor.getDouble(2));
+        owed.setDescription(cursor.getString(3));
+        owed.setDateTime(cursor.getString(4));
         return owed;
     }
 

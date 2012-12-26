@@ -26,6 +26,8 @@ public class OweInfo extends Activity {
     //DATA FIELDS
     String name;
     double amount;
+    String date;
+    String desc;
     Owe owe;
 
     //GUI ELEMENTS
@@ -39,6 +41,8 @@ public class OweInfo extends Activity {
 
     TextView oweName;
     TextView oweAmount;
+    TextView oweDate;
+    TextView oweDesc;
 
     //DATASOURCE FOR MODIFYING DATABASE
     private OwesDataSource datasource;
@@ -73,6 +77,8 @@ public class OweInfo extends Activity {
         doneButton = (ImageButton)findViewById(R.id.owe_done_button);
         oweName = (TextView)findViewById(R.id.owe_dialog_name);
         oweAmount = (TextView)findViewById(R.id.owe_dialog_amount);
+        oweDate = (TextView)findViewById(R.id.owe_info_date);
+        oweDesc = (TextView)findViewById(R.id.owe_description);
 
         //THIS ACTIVITY SHOULD BE CALLED WITH AN INTENT WITH AN EXTRA
         //THAT SPECIFIES WHICH ELEMENT IN THE LIST WAS CLICKED AND THEN WE CAN LOAD
@@ -82,8 +88,17 @@ public class OweInfo extends Activity {
             owe = (Owe)extras.getSerializable("owe");
             name = owe.getName();
             amount = owe.getOweAmount();
+            date = owe.getDateTime();
+            desc = owe.getDescription();
             oweName.setText(name);
             oweAmount.setText(String.valueOf(amount));
+            oweDate.setText(date);
+            if(desc.length() != 0) {
+                oweDesc.setText(desc);
+            }
+            else {
+                oweDesc.setText(R.string.empty_desc);
+            }
             //COME BACK TO... YOU HAVE UPDATED THE FIELDS OF THE DIALOG
             //TO SHOW THE CORRECT VALUES FROM THE TABLE
 

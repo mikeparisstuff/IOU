@@ -9,6 +9,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:layout_gravity="center" android:paddingLeft="10dp"
             android:paddingRight="10dp" android:paddingTop="5dp" android:paddingBottom="5dp">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                 android:orientation="vertical"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentLeft="true">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/date_created_title"
+                    android:textSize="14sp"
+                    android:id="@+id/date_created_title"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/date_created"
+                    android:textSize="14sp"
+                    android:id="@+id/owe_info_date"/>
+        </LinearLayout>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -39,8 +57,10 @@
                 android:layout_height="wrap_content"
                 android:text="New Text"
                 android:id="@+id/owe_dialog_name"
-                android:layout_alignParentRight="true"
-                android:layout_gravity="center_vertical" android:textColor="@color/black" android:textSize="18sp"/>
+                android:layout_alignParentRight="false"
+                android:layout_gravity="center_vertical" android:textColor="@color/black" android:textSize="18sp"
+                android:layout_alignBottom="@+id/owe_dialog_name_title"
+                android:layout_toRightOf="@+id/owe_dialog_name_title" android:layout_marginLeft="10dp"/>
     </RelativeLayout>
     <RelativeLayout
             android:layout_width="match_parent"
@@ -56,15 +76,38 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New Text"
-                android:id="@+id/owe_dialog_amount" android:layout_alignParentRight="true"
-                android:layout_centerVertical="true" android:textColor="@color/green" android:textSize="18sp"/>
+                android:id="@+id/owe_dialog_amount" android:layout_alignParentRight="false"
+                android:textColor="@color/green" android:textSize="18sp"
+                android:layout_alignBottom="@+id/owe_dialog_amount_title" android:layout_toRightOf="@+id/textView"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/money_sign"
-                android:id="@+id/textView" android:layout_toLeftOf="@+id/owe_dialog_amount"
-                android:layout_alignParentTop="false" android:layout_centerVertical="true"
-                android:textColor="@color/black" android:layout_marginRight="5dp" android:textSize="18sp"/>
+                android:id="@+id/textView"
+                android:layout_alignParentTop="false"
+                android:textColor="@color/black" android:layout_marginRight="5dp" android:textSize="18sp"
+                android:layout_alignBottom="@+id/owe_dialog_amount_title"
+                android:layout_toRightOf="@+id/owe_dialog_amount_title" android:layout_marginLeft="10dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_gravity="center" android:paddingLeft="10dp"
+            android:paddingRight="10dp" android:paddingBottom="5dp" android:paddingTop="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/owe_desc_prompt"
+            android:id="@+id/owe_desc_prompt" android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true" android:textColor="@color/black" android:textSize="20sp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/owe_desc"
+                android:layout_marginLeft="10dp" android:textSize="17sp"
+                android:id="@+id/owe_description" android:layout_toRightOf="@+id/owe_desc_prompt"
+                android:layout_alignParentBottom="false" android:textColor="@color/black"
+                android:layout_alignBottom="@+id/owe_desc_prompt" android:textIsSelectable="false"/>
+
     </RelativeLayout>
     <LinearLayout
             android:orientation="horizontal"

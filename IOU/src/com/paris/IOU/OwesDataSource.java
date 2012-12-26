@@ -6,8 +6,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created with IntelliJ IDEA.
@@ -22,7 +25,8 @@ public class OwesDataSource {
     private SQLiteDatabase database;
     private MySQLiteOweHelper dbHelper;
     private String[] allColumns = { MySQLiteOweHelper.COLUMN_ID,
-        MySQLiteOweHelper.COLUMN_NAME, MySQLiteOweHelper.COLUMN_OWE};
+        MySQLiteOweHelper.COLUMN_NAME, MySQLiteOweHelper.COLUMN_OWEVAL,
+        MySQLiteOweHelper.COLUMN_DESC, MySQLiteOweHelper.COLUMN_DATECREATED};
 
     public OwesDataSource(Context context) {
         dbHelper = new MySQLiteOweHelper(context);
@@ -36,10 +40,16 @@ public class OwesDataSource {
         dbHelper.close();
     }
 
-    public Owe createOwe(String name, double oweAmount) {
+    public Owe createOwe(String name, double oweAmount, String desc) {
         ContentValues values = new ContentValues();
         values.put(MySQLiteOweHelper.COLUMN_NAME, name);
-        values.put(MySQLiteOweHelper.COLUMN_OWE, oweAmount);
+        values.put(MySQLiteOweHelper.COLUMN_OWEVAL, oweAmount);
+        values.put(MySQLiteOweHelper.COLUMN_DESC, desc);
+
+        //Get current date to add to table
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+        String strDate = sdf.format(new Date());
+        values.put(MySQLiteOweHelper.COLUMN_DATECREATED, strDate);
 
         long insertId = database.insert(MySQLiteOweHelper.TABLE_OWES, null,
                 values);
@@ -56,7 +66,9 @@ public class OwesDataSource {
         String strFilter = "_id=" + owe.getId();
         ContentValues values = new ContentValues();
         values.put(MySQLiteOweHelper.COLUMN_NAME, owe.getName());
-        values.put(MySQLiteOweHelper.COLUMN_OWE, amount);
+        values.put(MySQLiteOweHelper.COLUMN_OWEVAL, amount);
+        values.put(MySQLiteOweHelper.COLUMN_DESC, owe.getDescription());
+        values.put(MySQLiteOweHelper.COLUMN_DATECREATED, owe.getDateTime());
         database.update(MySQLiteOweHelper.TABLE_OWES, values, strFilter, null);
     }
 
@@ -90,6 +102,8 @@ public class OwesDataSource {
         owe.setId(cursor.getLong(0));
         owe.setName(cursor.getString(1));
         owe.setOweAmount(cursor.getDouble(2));
+        owe.setDescription(cursor.getString(3));
+        owe.setDateTime(cursor.getString(4));
         return owe;
     }
 

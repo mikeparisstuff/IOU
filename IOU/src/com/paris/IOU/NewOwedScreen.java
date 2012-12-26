@@ -5,10 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.Toast;
+import android.widget.*;
 
 import static android.view.WindowManager.LayoutParams;
 
@@ -26,10 +23,12 @@ public class NewOwedScreen extends Activity {
     private Button cancelOwed;
     private EditText newNameEdit;
     private EditText newAmountEdit;
+    private EditText newOwedDesc;
+    private TextView newOwedTitle;
 
     public void onCreate(Bundle savedInstanceBundle) {
         super.onCreate(savedInstanceBundle);
-        setContentView(R.layout.new_owed_screen);
+        setContentView(R.layout.new_owe_screen);
 
         LayoutParams params = getWindow().getAttributes();
         params.width = LayoutParams.MATCH_PARENT;
@@ -37,10 +36,15 @@ public class NewOwedScreen extends Activity {
         getWindow().setAttributes((LayoutParams) params);
 
         //find GUI views by id
-        confirmOwed = (Button) findViewById(R.id.confirm_owed_button);
-        cancelOwed = (Button) findViewById(R.id.cancel_owed_button);
-        newNameEdit = (EditText) findViewById(R.id.new_owed_name);
-        newAmountEdit = (EditText) findViewById(R.id.new_owed_amount);
+        confirmOwed = (Button) findViewById(R.id.confirm_owe_button);
+        cancelOwed = (Button) findViewById(R.id.cancel_owe_button);
+        newNameEdit = (EditText) findViewById(R.id.new_owe_name);
+        newAmountEdit = (EditText) findViewById(R.id.new_owe_amount);
+        newOwedTitle = (TextView)findViewById(R.id.new_owe_title);
+        newOwedDesc = (EditText)findViewById(R.id.new_owe_desc);
+
+        //SET TITLE TO BE FOR OWED
+        newOwedTitle.setText(R.string.new_owed);
 
         //set onClickListeners
         confirmOwed.setOnClickListener( new View.OnClickListener() {
@@ -66,6 +70,7 @@ public class NewOwedScreen extends Activity {
             Intent intent = new Intent(NewOwedScreen.this, OwedScreen.class);
             intent.putExtra("name", newNameEdit.getText().toString());
             intent.putExtra("amount", Double.parseDouble(newAmountEdit.getText().toString()));
+            intent.putExtra("desc", newOwedDesc.getText().toString());
             startActivity(intent);
         }
         else {

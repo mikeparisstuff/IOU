@@ -43,6 +43,7 @@ public class OweAdapter extends ArrayAdapter<Owe> {
             holder = new OweHolder();
             holder.name = (TextView)row.findViewById(R.id.owe_name);
             holder.amount = (TextView)row.findViewById(R.id.owe_amount);
+            holder.date = (TextView)row.findViewById(R.id.owe_date_created);
 
             row.setTag(holder);
         }
@@ -53,6 +54,7 @@ public class OweAdapter extends ArrayAdapter<Owe> {
         Owe owe = data.get(position);
         holder.name.setText(owe.getName());
         holder.amount.setText(String.valueOf(owe.getOweAmount()));
+        holder.date.setText(owe.getDateTime());
 
         return row;
     }
@@ -60,5 +62,6 @@ public class OweAdapter extends ArrayAdapter<Owe> {
     static class OweHolder {
         TextView name;
         TextView amount;
+        TextView date;
     }
 }

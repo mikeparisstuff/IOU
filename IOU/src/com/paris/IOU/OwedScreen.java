@@ -55,8 +55,10 @@ public class OwedScreen extends Activity { //ListActivity {
         oweds = datasource.getAllOwed();
         //Owed owed_data[] = oweds.toArray(new Owed[oweds.size()]);
 
+
+        //NOW USING OWE_ROW FOR BETTER CODE REUSE
         adapter = new OwedAdapter(this,
-                R.layout.owed_row, oweds);
+                R.layout.owe_row, oweds);
 
         owedListView = (ListView)findViewById(R.id.owed_listview);
 
@@ -91,34 +93,15 @@ public class OwedScreen extends Activity { //ListActivity {
                 Intent i = new Intent(OwedScreen.this, OwedInfo.class);
                 i.putExtra("owed", owed);
                 startActivity(i);
-
-//                datasource.deleteOwed(owed);
-//                oweds.remove(owed);
-//                adapter.notifyDataSetChanged();
             }
         });
-
-        //Used in early version with multiple rows
-//        owedList = new ArrayList<HashMap<String, String>>();
-
-        //make list adapter to tie data from DB to listView
-//        adapter = new SimpleAdapter(
-//                this, owedList,  R.layout.owed_row,
-//                new String[] {"name", "owedAmount"},
-//                new int[] { R.id.owed_name, R.id.owed_amount}
-//                );
-//        setListAdapter(adapter);
-
-        //Used when I had to have 2 lists holding the info
-        //for the list adapter
-//        populateList(oweds);
 
         Bundle extras = getIntent().getExtras();
 
         if(extras != null) {
             if(extras.containsKey("name") && extras.containsKey("amount")) {
                 Owed owed = datasource.createOwed(extras.getString("name"),
-                        extras.getDouble("amount"));
+                        extras.getDouble("amount"), extras.getString("desc"));
                 oweds.add(owed);
                 adapter.notifyDataSetChanged();
             }
@@ -139,14 +122,6 @@ public class OwedScreen extends Activity { //ListActivity {
         catch (SQLException e) {
             e.printStackTrace();
         }
-//        Bundle extras = getIntent().getExtras();
-//
-//        if(extras != null) {
-//            Owed owed = datasource.createOwed(extras.getString("name"),
-//                    extras.getDouble("amount"));
-//            addOwed(owed.getName(), owed.getOwedAmount());
-//            adapter.notifyDataSetChanged();
-//        }
     }
 
     public void onPause(Bundle savedInstanceState) {
@@ -154,36 +129,4 @@ public class OwedScreen extends Activity { //ListActivity {
         datasource.close();
     }
 
-//    @Override
-//    public void onListItemClick(ListView l, View v, int position, long id) {
-//           Owed owed = (Owed) getListView().getItemAtPosition(position);
-//           datasource.deleteOwed(owed);
-//           adapter.notifyDataSetChanged();
-//    }
-
-//    private void addOwedToList() {
-//        Owed owed = null;
-//        //Still need to implement a way to update the information
-//        //personally
-//
-//        owed = datasource.createOwed("Test Owed", 7.60);
-//        addOwed(owed.getName(), owed.getOwedAmount());
-//
-//        adapter.notifyDataSetChanged();
-//
-//    }
-
-//    private List<HashMap<String, String>> addOwed(String name, double value) {
-//        HashMap<String, String> owedMap = new HashMap<String, String>();
-//        owedMap.put("name", name);
-//        owedMap.put("owedAmount", String.valueOf(value));
-//        owedList.add(owedMap);
-//        return owedList;
-//    }
-//
-//    private void populateList(List<Owed> oweds) {
-//        for( Owed owed: oweds) {
-//            addOwed(owed.getName(), owed.getOwedAmount());
-//        }
-//    }
 }

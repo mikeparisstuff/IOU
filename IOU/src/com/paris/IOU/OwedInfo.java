@@ -24,6 +24,8 @@ public class OwedInfo extends Activity {
     //DATA fields
     String name;
     double amount;
+    String date;
+    String desc;
     Owed owed;
 
     //GUI ELEMENTS
@@ -37,6 +39,8 @@ public class OwedInfo extends Activity {
 
     TextView owedName;
     TextView owedAmount;
+    TextView owedDate;
+    TextView owedDesc;
     TextView owedTitle;
 
     //Datasource for modifying database
@@ -70,6 +74,8 @@ public class OwedInfo extends Activity {
         owedName = (TextView)findViewById(R.id.owe_dialog_name);
         owedAmount = (TextView)findViewById(R.id.owe_dialog_amount);
         owedTitle = (TextView)findViewById(R.id.owe_dialog_title);
+        owedDate = (TextView)findViewById(R.id.owe_info_date);
+        owedDesc = (TextView)findViewById(R.id.owe_description);
 
         //Set title to "Owed"
         owedTitle.setText("Owed");
@@ -80,8 +86,17 @@ public class OwedInfo extends Activity {
             owed = (Owed)extras.getSerializable("owed");
             name = owed.getName();
             amount = owed.getOwedAmount();
+            date = owed.getDateTime();
+            desc = owed.getDescription();
             owedName.setText(name);
             owedAmount.setText(String.valueOf(amount));
+            owedDate.setText(date);
+            if(desc.length() != 0) {
+                owedDesc.setText(desc);
+            }
+            else {
+                owedDesc.setText(R.string.empty_desc);
+            }
         }
 
         deleteButton.setOnClickListener(new View.OnClickListener() {
@@ -182,8 +197,5 @@ public class OwedInfo extends Activity {
         this.amount += amt;
         datasource.updateOwed(owed, amount);
         startActivity(new Intent(OwedInfo.this, OwedScreen.class));
-
-
-//        Log.w("oweAddAmount","New Amount: " + amount);
     }
 }

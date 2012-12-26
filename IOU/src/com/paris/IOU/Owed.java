@@ -14,9 +14,27 @@ public class Owed implements Serializable {
     private long id;
     private String name;
     private double owedAmount;
+    private String description;
+    private String dateTime;
 
     public long getId() {
         return id;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDateTime() {
+        return dateTime;
+    }
+
+    public void setDateTime(String dateTime) {
+        this.dateTime = dateTime;
     }
 
     public String getName() {

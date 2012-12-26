@@ -1,6 +1,7 @@
 package com.paris.IOU;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,9 +15,27 @@ public class Owe implements Serializable {
     private long id;
     private String name;
     private double oweAmount;
+    private String description;
+    private String dateTime;
 
     public long getId() {
         return id;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDateTime() {
+        return dateTime;
+    }
+
+    public void setDateTime(String dateTime) {
+        this.dateTime = dateTime;
     }
 
     public String getName() {

@@ -42,8 +42,10 @@ public class OwedAdapter extends ArrayAdapter<Owed> {
             row = inflater.inflate(layoutResourceId, parent, false);
 
             holder = new OwedHolder();
-            holder.name = (TextView)row.findViewById(R.id.owed_name);
-            holder.amount = (TextView)row.findViewById(R.id.owed_amount);
+            holder.name = (TextView)row.findViewById(R.id.owe_name);
+            holder.amount = (TextView)row.findViewById(R.id.owe_amount);
+            holder.date = (TextView)row.findViewById(R.id.owe_date_created);
+
 
             row.setTag(holder);
         }
@@ -55,6 +57,7 @@ public class OwedAdapter extends ArrayAdapter<Owed> {
         Owed owed = data.get(position);
         holder.name.setText(owed.getName());
         holder.amount.setText(String.valueOf(owed.getOwedAmount()));
+        holder.date.setText(owed.getDateTime());
 
         return row;
     }
@@ -62,5 +65,6 @@ public class OwedAdapter extends ArrayAdapter<Owed> {
     static class OwedHolder {
         TextView name;
         TextView amount;
+        TextView date;
     }
 }

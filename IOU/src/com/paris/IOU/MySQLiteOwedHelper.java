@@ -18,15 +18,20 @@ public class MySQLiteOwedHelper extends SQLiteOpenHelper{
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_NAME = "name";
     public static final String COLUMN_OWEDVAL = "owedval";
+    public static final String COLUMN_DESC = "description";
+    public static final String COLUMN_DATECREATED = "datecreated";
 
     public static final String DATABASE_NAME = "oweds.db";
-    public static final int DATABASE_VERSION = 1;
+    //ADDING DATE AND DESCRIPTION---> VERSION 2
+    public static final int DATABASE_VERSION = 2;
 
     private static final String DATABASE_CREATE = "create table "
             + TABLE_OWEDS + "(" + COLUMN_ID
             + " integer primary key autoincrement, " + COLUMN_NAME
             + " text not null, " + COLUMN_OWEDVAL
-            + " text not null);";
+            + " text not null, " + COLUMN_DESC
+            + " text not null, " + COLUMN_DATECREATED
+            + " DATETIME DEFAULT CURRENT_TIMESTAMP);";
 
     public MySQLiteOwedHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
