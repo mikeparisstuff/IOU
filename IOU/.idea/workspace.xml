@@ -31,7 +31,7 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/home_owe_background.xml" changelist="29bea0b1-c4df-4aef-b8b5-715cd1b48ce7" time="1354828888128" ignored="false" />
     <file path="/HomeScreen.java" changelist="29bea0b1-c4df-4aef-b8b5-715cd1b48ce7" time="1354829480153" ignored="false" />
-    <file path="/Dummy.txt" changelist="29bea0b1-c4df-4aef-b8b5-715cd1b48ce7" time="1356644842526" ignored="false" />
+    <file path="/Dummy.txt" changelist="29bea0b1-c4df-4aef-b8b5-715cd1b48ce7" time="1356647265366" ignored="false" />
     <file path="/owed_screen.xml" changelist="29bea0b1-c4df-4aef-b8b5-715cd1b48ce7" time="1355799652082" ignored="false" />
     <file path="/strings.xml" changelist="29bea0b1-c4df-4aef-b8b5-715cd1b48ce7" time="1356645185634" ignored="false" />
     <file path="/OweScreen.java" changelist="29bea0b1-c4df-4aef-b8b5-715cd1b48ce7" time="1356645905664" ignored="false" />
@@ -132,17 +132,17 @@
     <favorites_list name="IOU" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4982818">
+    <splitter split-orientation="horizontal" split-proportion="0.4982819">
       <split-first>
         <leaf>
           <file leaf-file-name="new_owed_screen.xml" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/res/layout/new_owed_screen.xml">
-              <provider editor-type-id="text-editor">
+              <provider selected="true" editor-type-id="text-editor">
                 <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
-              <provider selected="true" editor-type-id="android-designer">
+              <provider editor-type-id="android-designer">
                 <state />
               </provider>
             </entry>
@@ -150,7 +150,7 @@
           <file leaf-file-name="Owed.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/Owed.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="19" column="19" selection-start="412" selection-end="412" vertical-scroll-proportion="0.0">
+                <state line="49" column="19" selection-start="1077" selection-end="1077" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -159,7 +159,7 @@
           <file leaf-file-name="OwedAdapter.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/OwedAdapter.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="59" column="46" selection-start="1795" selection-end="1795" vertical-scroll-proportion="0.0">
+                <state line="63" column="46" selection-start="1825" selection-end="1825" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -168,16 +168,16 @@
           <file leaf-file-name="OwedInfo.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/OwedInfo.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="198" column="67" selection-start="7377" selection-end="7377" vertical-scroll-proportion="0.0">
+                <state line="200" column="1" selection-start="7385" selection-end="7385" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="OwedScreen.java" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="OwedScreen.java" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/OwedScreen.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="113" column="41" selection-start="3540" selection-end="3540" vertical-scroll-proportion="0.58064514">
+                <state line="104" column="39" selection-start="3177" selection-end="3177" vertical-scroll-proportion="0.18364197">
                   <folding />
                 </state>
               </provider>
@@ -186,7 +186,7 @@
           <file leaf-file-name="NewOwedScreen.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/NewOwedScreen.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="53" column="55" selection-start="1951" selection-end="1951" vertical-scroll-proportion="0.0">
+                <state line="64" column="55" selection-start="2265" selection-end="2265" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -195,7 +195,7 @@
           <file leaf-file-name="OwedsDataSource.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/OwedsDataSource.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="103" column="46" selection-start="3663" selection-end="3663" vertical-scroll-proportion="0.0">
+                <state line="108" column="0" selection-start="3694" selection-end="3694" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -203,12 +203,12 @@
           </file>
           <file leaf-file-name="owed_screen.xml" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/res/layout/owed_screen.xml">
-              <provider editor-type-id="text-editor">
+              <provider selected="true" editor-type-id="text-editor">
                 <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
-              <provider selected="true" editor-type-id="android-designer">
+              <provider editor-type-id="android-designer">
                 <state />
               </provider>
             </entry>
@@ -220,7 +220,7 @@
           <file leaf-file-name="Owe.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/Owe.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="30" column="5" selection-start="715" selection-end="715" vertical-scroll-proportion="0.0">
+                <state line="61" column="5" selection-start="1259" selection-end="1259" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -229,7 +229,7 @@
           <file leaf-file-name="OweAdapter.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/OweAdapter.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="56" column="47" selection-start="1719" selection-end="1719" vertical-scroll-proportion="0.0">
+                <state line="59" column="47" selection-start="1746" selection-end="1746" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -238,7 +238,7 @@
           <file leaf-file-name="OweInfo.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/OweInfo.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="85" column="3" selection-start="2482" selection-end="2482" vertical-scroll-proportion="0.0">
+                <state line="100" column="3" selection-start="3057" selection-end="3057" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -246,12 +246,12 @@
           </file>
           <file leaf-file-name="owe_row.xml" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/res/layout/owe_row.xml">
-              <provider editor-type-id="text-editor">
+              <provider selected="true" editor-type-id="text-editor">
                 <state line="5" column="27" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
-              <provider selected="true" editor-type-id="android-designer">
+              <provider editor-type-id="android-designer">
                 <state />
               </provider>
             </entry>
@@ -259,7 +259,7 @@
           <file leaf-file-name="NewOweScreen.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/NewOweScreen.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="67" column="93" selection-start="2375" selection-end="2375" vertical-scroll-proportion="0.0">
+                <state line="70" column="93" selection-start="2488" selection-end="2488" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -268,16 +268,16 @@
           <file leaf-file-name="OwesDataSource.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/OwesDataSource.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="49" column="63" selection-start="1519" selection-end="1519" vertical-scroll-proportion="0.0">
+                <state line="59" column="63" selection-start="1998" selection-end="1998" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="OweScreen.java" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="OweScreen.java" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/OweScreen.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="103" column="20" selection-start="3015" selection-end="3141" vertical-scroll-proportion="0.72336066">
+                <state line="66" column="20" selection-start="1698" selection-end="1698" vertical-scroll-proportion="0.022354694">
                   <folding />
                 </state>
               </provider>
@@ -286,7 +286,7 @@
           <file leaf-file-name="MySQLiteOweHelper.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/MySQLiteOweHelper.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="33" column="31" selection-start="1236" selection-end="1236" vertical-scroll-proportion="0.0">
+                <state line="38" column="31" selection-start="1431" selection-end="1431" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -295,7 +295,7 @@
           <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="36" column="61" selection-start="1457" selection-end="1457" vertical-scroll-proportion="-14.32">
+                <state line="48" column="61" selection-start="1965" selection-end="1965" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -304,7 +304,7 @@
           <file leaf-file-name="new_owe_screen.xml" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/res/layout/new_owe_screen.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="18" column="42" selection-start="817" selection-end="817" vertical-scroll-proportion="-1.4615384">
+                <state line="20" column="42" selection-start="903" selection-end="903" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -347,13 +347,13 @@
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/com/paris/IOU/Owed.java" />
         <option value="$PROJECT_DIR$/src/com/paris/IOU/Owe.java" />
-        <option value="$PROJECT_DIR$/src/com/paris/IOU/OweScreen.java" />
         <option value="$PROJECT_DIR$/src/com/paris/IOU/OwedScreen.java" />
+        <option value="$PROJECT_DIR$/src/com/paris/IOU/OweScreen.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2" />
+    <option name="x" value="4" />
     <option name="y" value="22" />
     <option name="width" value="1436" />
     <option name="height" value="878" />
@@ -400,6 +400,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -488,7 +489,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -713,31 +713,31 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="2" y="22" width="1436" height="878" extended-state="6" />
+    <frame x="4" y="22" width="1436" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18345323" sideWeight="0.7585752" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1676259" sideWeight="0.7585752" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287858" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32853025" sideWeight="0.8852243" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.70580477" sideWeight="0.49784172" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17862266" sideWeight="0.7572559" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18865435" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17596567" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287858" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.08393113" sideWeight="0.89577836" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1647482" sideWeight="0.7585752" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2414248" sideWeight="0.4971223" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.095683455" sideWeight="0.7585752" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24078947" sideWeight="0.4971223" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18345323" sideWeight="0.7585752" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1676259" sideWeight="0.7585752" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32853025" sideWeight="0.8852243" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.094986804" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18865435" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -804,35 +804,35 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/NewOweScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="93" selection-start="2375" selection-end="2375" vertical-scroll-proportion="0.0">
+        <state line="70" column="93" selection-start="2488" selection-end="2488" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/OweAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="47" selection-start="1719" selection-end="1719" vertical-scroll-proportion="0.0">
+        <state line="59" column="47" selection-start="1746" selection-end="1746" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/OwesDataSource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="63" selection-start="1519" selection-end="1519" vertical-scroll-proportion="0.0">
+        <state line="59" column="63" selection-start="1998" selection-end="1998" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/OwedAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="46" selection-start="1795" selection-end="1795" vertical-scroll-proportion="0.0">
+        <state line="63" column="46" selection-start="1825" selection-end="1825" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/OwedInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="198" column="67" selection-start="7377" selection-end="7377" vertical-scroll-proportion="0.0">
+        <state line="200" column="1" selection-start="7385" selection-end="7385" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -849,24 +849,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/OweInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="3" selection-start="2482" selection-end="2482" vertical-scroll-proportion="0.0">
+        <state line="100" column="3" selection-start="3057" selection-end="3057" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/owe_row.xml">
-      <provider editor-type-id="text-editor">
+      <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="27" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer">
+      <provider editor-type-id="android-designer">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/new_owe_screen.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="42" selection-start="817" selection-end="817" vertical-scroll-proportion="-1.4615384">
+        <state line="20" column="42" selection-start="903" selection-end="903" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -876,49 +876,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="61" selection-start="1457" selection-end="1457" vertical-scroll-proportion="-14.32">
+        <state line="48" column="61" selection-start="1965" selection-end="1965" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/OwedsDataSource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="46" selection-start="3663" selection-end="3663" vertical-scroll-proportion="0.0">
+        <state line="108" column="0" selection-start="3694" selection-end="3694" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/NewOwedScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="55" selection-start="1951" selection-end="1951" vertical-scroll-proportion="0.0">
+        <state line="64" column="55" selection-start="2265" selection-end="2265" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/Owed.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="19" selection-start="412" selection-end="412" vertical-scroll-proportion="0.0">
+        <state line="49" column="19" selection-start="1077" selection-end="1077" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/Owe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="5" selection-start="715" selection-end="715" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/OweScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="20" selection-start="3015" selection-end="3141" vertical-scroll-proportion="0.72336066">
+        <state line="61" column="5" selection-start="1259" selection-end="1259" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/OwedScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="41" selection-start="3540" selection-end="3540" vertical-scroll-proportion="0.58064514">
+        <state line="104" column="39" selection-start="3177" selection-end="3177" vertical-scroll-proportion="0.18364197">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/paris/IOU/OweScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="20" selection-start="1698" selection-end="1698" vertical-scroll-proportion="0.022354694">
           <folding />
         </state>
       </provider>
