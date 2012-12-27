@@ -99,8 +99,15 @@ public class OweScreen extends Activity { //ListActivity {
             if(extras.containsKey("name") && extras.containsKey("amount")) {
                 Owe owe = datasource.createOwe(extras.getString("name"),
                         extras.getDouble("amount"), extras.getString("desc"));
-                owes.add(owe);
-                adapter.notifyDataSetChanged();
+                if(owes.contains(owe)) {
+                    datasource.deleteOwe(owe);
+                    Toast.makeText(this, "An owe for " + owe.getName() + " already exists",
+                            Toast.LENGTH_LONG).show();
+                }
+                else {
+                    owes.add(owe);
+                    adapter.notifyDataSetChanged();
+                }
             }
             if(extras.containsKey("owe")) {
                 Owe owe = (Owe)extras.getSerializable("owe");

@@ -34,8 +34,9 @@
     <!-- New Owed Screen -->
     <string name="new_owed">New Owed Record</string>
     <string name="new_owed_name_hint">Who owes you?</string>
-    <string name="new_owed_amount_hint">How much do you owe?</string>
+    <string name="new_owed_amount_hint">How much are you owed?</string>
     <string name="add_owed">Add Owed</string>
+    <string name="new_owed_desc_hint">Why are you owed this?</string>
 
     <!-- Owe Info -->
     <string name="owe_title">Owe</string>

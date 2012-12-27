@@ -25,6 +25,8 @@ public class NewOwedScreen extends Activity {
     private EditText newAmountEdit;
     private EditText newOwedDesc;
     private TextView newOwedTitle;
+    private EditText newOwedName;
+    private EditText newOwedAmount;
 
     public void onCreate(Bundle savedInstanceBundle) {
         super.onCreate(savedInstanceBundle);
@@ -42,9 +44,14 @@ public class NewOwedScreen extends Activity {
         newAmountEdit = (EditText) findViewById(R.id.new_owe_amount);
         newOwedTitle = (TextView)findViewById(R.id.new_owe_title);
         newOwedDesc = (EditText)findViewById(R.id.new_owe_desc);
+        newOwedName = (EditText)findViewById(R.id.new_owe_name);
+        newOwedAmount=(EditText)findViewById(R.id.new_owe_amount);
 
         //SET TITLE TO BE FOR OWED
         newOwedTitle.setText(R.string.new_owed);
+        newOwedName.setHint(R.string.new_owed_name_hint);
+        newOwedAmount.setHint(R.string.new_owed_amount_hint);
+        newOwedDesc.setHint(R.string.new_owed_desc_hint);
 
         //set onClickListeners
         confirmOwed.setOnClickListener( new View.OnClickListener() {

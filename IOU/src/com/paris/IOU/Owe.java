@@ -18,6 +18,18 @@ public class Owe implements Serializable {
     private String description;
     private String dateTime;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Owe owe = (Owe) o;
+
+        if (name != null ? !name.equals(owe.name) : owe.name != null) return false;
+
+        return true;
+    }
+
     public long getId() {
         return id;
     }

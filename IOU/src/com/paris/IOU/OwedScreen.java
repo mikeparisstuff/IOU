@@ -99,11 +99,18 @@ public class OwedScreen extends Activity { //ListActivity {
         Bundle extras = getIntent().getExtras();
 
         if(extras != null) {
-            if(extras.containsKey("name") && extras.containsKey("amount")) {
+            if(extras.containsKey("name") && extras.containsKey("amount") ) {
                 Owed owed = datasource.createOwed(extras.getString("name"),
                         extras.getDouble("amount"), extras.getString("desc"));
-                oweds.add(owed);
-                adapter.notifyDataSetChanged();
+                if(oweds.contains(owed)) {
+                    datasource.deleteOwed(owed);
+                    Toast.makeText(this, "An owed for " + owed.getName() + " already exists",
+                            Toast.LENGTH_LONG).show();
+                }
+                else {
+                    oweds.add(owed);
+                    adapter.notifyDataSetChanged();
+                }
             }
             if(extras.containsKey("owed")) {
                 Owed owed = (Owed)extras.getSerializable("owed");
