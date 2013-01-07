@@ -26,7 +26,7 @@
     <string name="new_owe">New Owe Record</string>
     <string name="new_owe_name_hint">Who do you owe?</string>
     <string name="new_owe_amount_hint">How much do you owe?</string>
-    <string name="add_owe">Add Owe</string>
+    <string name="add_owe">Add IOU</string>
     <string name="cancel">Cancel</string>
     <string name="desc_title">Description</string>
     <string name="desc_hint">Why do you owe this? (Optional)</string>
@@ -35,11 +35,11 @@
     <string name="new_owed">New Owed Record</string>
     <string name="new_owed_name_hint">Who owes you?</string>
     <string name="new_owed_amount_hint">How much are you owed?</string>
-    <string name="add_owed">Add Owed</string>
+    <string name="add_owed">Add IOU</string>
     <string name="new_owed_desc_hint">Why are you owed this?</string>
 
     <!-- Owe Info -->
-    <string name="owe_title">Owe</string>
+    <string name="owe_title">I Owe</string>
     <string name="owe_name">Name:</string>
     <string name="owe_amount">Amount:</string>
     <string name="owe_delete">Delete</string>
@@ -53,6 +53,15 @@
     <string name="empty_desc">None</string>
 
     <!-- Owed Info -->
-    <string name="owed_title">Owed</string>
+    <string name="owed_title">I\'m Owed</string>
+
+    <!-- Menu Screen -->
+    <string name="menu_new">Add New</string>
+    <string name="delete_all">Delete All</string>
+
+    <!-- IouEditFrag -->
+    <string name="edit_hint">Enter amount</string>
+    <string name="confirm">Confirm</string>
+    <string name="edit_iou">Edit Amount</string>
 
 </resources>

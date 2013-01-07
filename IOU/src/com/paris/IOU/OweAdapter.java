@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 /**
@@ -35,6 +36,7 @@ public class OweAdapter extends ArrayAdapter<Owe> {
     public View getView(int position, View convertView, ViewGroup parent) {
         View row = convertView;
         OweHolder holder = null;
+        DecimalFormat df = new DecimalFormat("#.##");
 
         if( row == null ) {
             LayoutInflater inflater = ((Activity)context).getLayoutInflater();
@@ -53,7 +55,7 @@ public class OweAdapter extends ArrayAdapter<Owe> {
 
         Owe owe = data.get(position);
         holder.name.setText(owe.getName());
-        holder.amount.setText(String.valueOf(owe.getOweAmount()));
+        holder.amount.setText(String.valueOf(df.format(owe.getOweAmount())));
         holder.date.setText(owe.getDateTime());
 
         return row;

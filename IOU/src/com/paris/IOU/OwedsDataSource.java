@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -76,6 +77,21 @@ public class OwedsDataSource {
         System.out.println("Owed deleted with id: " + id);
         database.delete(MySQLiteOwedHelper.TABLE_OWEDS, MySQLiteOwedHelper.COLUMN_ID
                 + " = " + id, null);
+    }
+
+    public void deleteAllOweds() {
+        Log.w("OwedsDataSource", "Delete all oweds called");
+        Cursor cursor = database.query(MySQLiteOwedHelper.TABLE_OWEDS,
+                allColumns, null, null, null, null, null);
+        cursor.moveToFirst();
+        while( !cursor.isAfterLast()) {
+            Owed owed = cursorToOwed(cursor);
+            long id = owed.getId();
+            database.delete(MySQLiteOwedHelper.TABLE_OWEDS, MySQLiteOwedHelper.COLUMN_ID +
+            " = " + id, null);
+            cursor.moveToNext();
+        }
+        cursor.close();
     }
 
     public List<Owed> getAllOwed() {

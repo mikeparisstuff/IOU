@@ -13,4 +13,8 @@
     <color name="green">#309331</color>
     <color name="black">#000000</color>
 
+    <!-- Edit screen -->
+    <color name="edit_box">#DCDEE4</color>
+    <color name="spinner_text">#FE3838</color>
+
 </resources>

@@ -9,6 +9,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import com.paris.IOUv2.BalanceScreen;
 
 /**
  * Created with IntelliJ IDEA.

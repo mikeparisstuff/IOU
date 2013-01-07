@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -34,6 +35,15 @@ public class OwesDataSource {
 
     public void open() throws SQLException {
         database = dbHelper.getWritableDatabase();
+    }
+
+    public boolean isOpen() {
+        if (database.isOpen()) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     public void close() {
@@ -77,6 +87,21 @@ public class OwesDataSource {
         System.out.println("Owe deleted with id: " + id);
         database.delete(MySQLiteOweHelper.TABLE_OWES, MySQLiteOweHelper.COLUMN_ID +
         " = " + id, null);
+    }
+
+    public void deleteAllOwes() {
+        Log.w("OwesDataSource", "Delete all owes called");
+        Cursor cursor = database.query(MySQLiteOweHelper.TABLE_OWES,
+                allColumns, null, null, null, null, null);
+        cursor.moveToFirst();
+        while( !cursor.isAfterLast()) {
+            Owe owe = cursorToOwe(cursor);
+            long id = owe.getId();
+            database.delete(MySQLiteOweHelper.TABLE_OWES, MySQLiteOweHelper.COLUMN_ID +
+            " = " + id, null);
+            cursor.moveToNext();
+        }
+        cursor.close();
     }
 
 

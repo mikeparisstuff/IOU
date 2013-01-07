@@ -24,7 +24,7 @@ public class HomeScreen extends Activity {
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeScreen.this, OweScreen.class));
+                startActivity(new Intent(HomeScreen.this, com.paris.IOUv2.BalanceScreen.class));//OweScreen.class));
             }
         });
 

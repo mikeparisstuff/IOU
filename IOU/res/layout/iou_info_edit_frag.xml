@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_gravity="center" android:paddingLeft="10dp"
+            android:paddingRight="10dp" android:paddingTop="5dp" android:paddingBottom="5dp">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                      android:orientation="vertical"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_alignParentLeft="true">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/date_created_title"
+                    android:textSize="14sp"
+                    android:id="@+id/date_created_title"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/date_created"
+                    android:textSize="14sp"
+                    android:id="@+id/owe_info_date"/>
+        </LinearLayout>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/owe_title"
+                android:layout_centerInParent="true"
+                android:id="@+id/owe_dialog_title" android:layout_gravity="center" android:textColor="@color/black"
+                android:textSize="25sp" />
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/owe_done_button" android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@android:drawable/ic_delete"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_gravity="center" android:paddingLeft="10dp"
+            android:paddingRight="10dp" android:paddingTop="5dp" android:paddingBottom="5dp">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/owe_name"
+                android:id="@+id/owe_dialog_name_title" android:layout_gravity="left|center_vertical"
+                android:textColor="@color/black" android:textSize="20sp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/owe_dialog_name"
+                android:layout_alignParentRight="false"
+                android:layout_gravity="center_vertical" android:textColor="@color/black" android:textSize="18sp"
+                android:layout_alignBottom="@+id/owe_dialog_name_title"
+                android:layout_toRightOf="@+id/owe_dialog_name_title" android:layout_marginLeft="10dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_gravity="center" android:paddingLeft="10dp"
+            android:paddingRight="10dp" android:paddingBottom="5dp" android:paddingTop="5dp">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/owe_amount"
+                android:id="@+id/owe_dialog_amount_title" android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true" android:textColor="@color/black" android:textSize="20sp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/owe_dialog_amount" android:layout_alignParentRight="false"
+                android:textColor="@color/green" android:textSize="18sp"
+                android:layout_alignBottom="@+id/owe_dialog_amount_title" android:layout_toRightOf="@+id/textView"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/money_sign"
+                android:id="@+id/textView"
+                android:layout_alignParentTop="false"
+                android:textColor="@color/black" android:layout_marginRight="5dp" android:textSize="18sp"
+                android:layout_alignBottom="@+id/owe_dialog_amount_title"
+                android:layout_toRightOf="@+id/owe_dialog_amount_title" android:layout_marginLeft="10dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_gravity="center" android:paddingLeft="10dp"
+            android:paddingRight="10dp" android:paddingBottom="5dp" android:paddingTop="5dp">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/owe_desc_prompt"
+                android:id="@+id/owe_desc_prompt" android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true" android:textColor="@color/black" android:textSize="20sp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/owe_desc"
+                android:layout_marginLeft="10dp" android:textSize="17sp"
+                android:id="@+id/owe_description" android:layout_toRightOf="@+id/owe_desc_prompt"
+                android:layout_alignParentBottom="false" android:textColor="@color/black"
+                android:layout_alignBottom="@+id/owe_desc_prompt" android:textIsSelectable="false"/>
+
+    </RelativeLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edit_layout"
+            android:visibility="gone"
+            android:background="@color/edit_box">
+        <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/add_subt_spinner" android:layout_gravity="center"/>
+        <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/edit_hint"
+                android:textColorHint="@color/black"
+                android:inputType="numberDecimal"
+                android:id="@+id/edit_amount" android:layout_gravity="center" android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp" android:layout_marginRight="5dp"
+                />
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_gravity="center" android:paddingTop="3dp"
+            android:paddingBottom="3dp" android:paddingLeft="3dp" android:paddingRight="3dp"
+            android:gravity="center_vertical">
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/owe_delete"
+                android:id="@+id/iou_deletecancel" android:layout_weight="1"/>
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/edit_iou"
+                android:id="@+id/iou_editconfirm" android:layout_weight="1"/>
+    </LinearLayout>
+</LinearLayout>
