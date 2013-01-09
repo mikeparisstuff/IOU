@@ -15,7 +15,6 @@ import com.paris.IOU.*;
 
 import java.io.Serializable;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -193,24 +192,25 @@ public class OweFragment extends Fragment {
         adapter.notifyDataSetChanged();
     }
 
-    public void onResume(Bundle savedInstanceState) {
+    @Override
+    public void onResume() {
         super.onResume();
-        Log.w(TAG, "onResume called");
-
-//        try {
-//            datasource.open();
-//        }
-//        catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-
+        if( !datasource.isOpen() ) {
+            try {
+                Log.w(TAG, "onResume opening database");
+                datasource.open();
+            } catch (SQLException e) {
+                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            }
+        }
     }
 
-    public void onPause(Bundle savedInstanceState) {
-        datasource.close();
+    @Override
+    public void onPause() {
         super.onPause();
-
-        Log.w(TAG, "onPause");
-
+        if( datasource.isOpen() ) {
+            Log.w(TAG, "onPause closing database");
+            datasource.close();
+        }
     }
 }

@@ -1,19 +1,20 @@
 package com.paris.IOUv2;
 
+import android.*;
 import android.app.*;
-import android.content.Intent;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
+import android.view.*;
 import android.widget.AdapterView;
-import android.widget.FrameLayout;
-import android.widget.ListView;
-import android.widget.Toast;
+import android.widget.TabHost;
 import com.paris.IOU.*;
+import com.paris.IOU.R;
 
 import java.io.Serializable;
+import java.util.prefs.Preferences;
 
 /**
  * Created with IntelliJ IDEA.
@@ -28,8 +29,11 @@ public class BalanceScreen extends Activity implements OweFragment.OnOweSelected
     private final String TAG = "BALANCE SCREEN";
     private final String OWETAG = "owe";
     private final String OWEDTAG = "owed";
+    private final String ABOUTTAG = "about";
+    private final String POSITION = "position";
 
     public void onCreate(Bundle savedInstanceState) {
+        Log.w(TAG, "onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.balance_screen);
 
@@ -51,18 +55,58 @@ public class BalanceScreen extends Activity implements OweFragment.OnOweSelected
                         this, OWEDTAG, OwedFragment.class));
         actionBar.addTab(tab);
 
+        //If returning from a previous state return or else have overlapping fragments
+        if( savedInstanceState != null ) {
+            Log.w(TAG, "savedInstanceState has Int " + savedInstanceState.get(POSITION));
+            ActionBar.Tab activeTab = actionBar.getTabAt(savedInstanceState.getInt(POSITION));
+            actionBar.setSelectedNavigationItem(savedInstanceState.getInt(POSITION));
+
+        }
 
         //Add the Fragment to the screen
         if( findViewById(R.id.content) != null ) {
 
-            //If returning from a previous state return or else have overlapping fragments
-            if( savedInstanceState != null ) {
-                return;
-            }
+
 
 //            OweFragment firstFrag = new OweFragment();
 //            getFragmentManager().beginTransaction().add(R.id.content, firstFrag, OWETAG).commit();
         }
+    }
+
+
+    //LIFECYCLE METHODS
+    @Override
+    protected void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putInt(POSITION, getActionBar().getSelectedNavigationIndex());
+        Log.w(TAG, "onSaveInstanceState" + " with Bundle: " + savedInstanceState.get(POSITION));
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        Log.w(TAG,"onRestoreInstanceState");
+        super.onRestoreInstanceState(savedInstanceState);
+        int position = savedInstanceState.getInt(POSITION);
+        getActionBar().setSelectedNavigationItem(position);
+    }
+
+    @Override
+    protected void onPause() {
+        Log.w(TAG, "onPause");
+        super.onPause();
+
+        SharedPreferences pref = this.getPreferences(MODE_PRIVATE);
+        pref.edit().putInt(POSITION, getActionBar().getSelectedNavigationIndex()).commit();
+        Log.w(TAG, "Prefs in Pause: " + String.valueOf(getPreferences(MODE_PRIVATE).getInt(POSITION, 0)));
+    }
+
+    @Override
+    protected void onResume() {
+        Log.w(TAG, "onResume");
+        super.onResume();
+
+        Log.w(TAG, String.valueOf(getPreferences(MODE_PRIVATE).getInt(POSITION, 0)));
+        getActionBar().setSelectedNavigationItem(getPreferences(MODE_PRIVATE).getInt(POSITION, 0));
     }
 
     @Override
@@ -143,6 +187,24 @@ public class BalanceScreen extends Activity implements OweFragment.OnOweSelected
                 }
 
                 break;
+            case R.id.about:
+                Log.w(TAG, "about button clicked");
+
+//                WindowManager.LayoutParams params = getWindow().getAttributes();
+//                params.width = WindowManager.LayoutParams.MATCH_PARENT;
+//                params.height = WindowManager.LayoutParams.WRAP_CONTENT;
+//                getWindow().setAttributes((WindowManager.LayoutParams) params);
+
+                Dialog dialog = new Dialog(this, android.R.style.Theme_Translucent_NoTitleBar);
+                dialog.setContentView(R.layout.about);
+                dialog.setCanceledOnTouchOutside(true);
+                WindowManager.LayoutParams params = dialog.getWindow().getAttributes();
+                params.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                params.width = WindowManager.LayoutParams.WRAP_CONTENT;
+                dialog.getWindow().setAttributes(params);
+                dialog.show();
+                break;
+
             default:
                 super.onOptionsItemSelected(item);
 

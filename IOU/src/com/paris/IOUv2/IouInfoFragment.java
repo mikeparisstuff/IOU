@@ -3,8 +3,6 @@ package com.paris.IOUv2;
 
 import android.app.Activity;
 import android.app.DialogFragment;
-import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,8 +16,6 @@ import com.paris.IOU.R;
 
 import java.io.Serializable;
 import java.lang.Override;
-import java.lang.Readable;
-import java.lang.StringBuffer;
 import java.text.DecimalFormat;
 
 /**

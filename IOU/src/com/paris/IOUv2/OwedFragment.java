@@ -181,21 +181,25 @@ public class OwedFragment extends Fragment {
         adapter.notifyDataSetChanged();
     }
 
-    public void onResume(Bundle savedInstanceState) {
+    @Override
+    public void onResume() {
         super.onResume();
-
-//        try {
-//            datasource.open();
-//        }
-//        catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-
+        if( !datasource.isOpen() ) {
+            try {
+                Log.w(TAG, "onResume opening database");
+                datasource.open();
+            } catch (SQLException e) {
+                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            }
+        }
     }
 
-    public void onPause(Bundle savedInstanceState) {
-        datasource.close();
+    @Override
+    public void onPause() {
         super.onPause();
-
+        if( datasource.isOpen() ) {
+            Log.w(TAG, "onPause closing database");
+            datasource.close();
+        }
     }
 }

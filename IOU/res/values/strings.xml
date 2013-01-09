@@ -58,10 +58,16 @@
     <!-- Menu Screen -->
     <string name="menu_new">Add New</string>
     <string name="delete_all">Delete All</string>
+    <string name="about">About</string>
 
     <!-- IouEditFrag -->
     <string name="edit_hint">Enter amount</string>
     <string name="confirm">Confirm</string>
     <string name="edit_iou">Edit Amount</string>
+
+    <!-- About -->
+    <string name="about_title">IOU</string>
+    <string name="about_content">Ever go out to dinner and get the stink eye when you ask for a split check, or even worse, they say they don\'t \"Do That\"? IOU is all about making this situation a non-issue. Be a pal, pay the whole bill, and then add an IOU for each person who now finds themself in your debt!</string>
+    <string name="signature">Designed and developed by Michael Paris</string>
 
 </resources>

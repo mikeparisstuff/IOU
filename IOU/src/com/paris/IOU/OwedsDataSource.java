@@ -36,6 +36,15 @@ public class OwedsDataSource {
        database = dbHelper.getWritableDatabase();
     }
 
+    public boolean isOpen() {
+        if (database.isOpen()) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
     public void close() {
         dbHelper.close();
     }

@@ -29,6 +29,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <fragment android:name="v2.About" android:label="About Fragment"/>
         <fragment android:name="v2.InfoEditFragment"/>
         <fragment android:name="v2.NewIouFragment"/>
         <fragment android:name="v2.IouInfoFragment"/>
